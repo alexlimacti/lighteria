@@ -1,13 +1,27 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
-import {View, Text, Image, StyleSheet} from 'react-native';
+import {Text, Image, StyleSheet, TouchableOpacity} from 'react-native';
+import {
+  FONT_FAMILY_SEMI_BOLD,
+  FONT_SIZE_SMALL,
+} from '../../../../styles/styles';
+import { useNavigation } from '@react-navigation/native';
 
-export const Item = ({imagem, titulo}) => {
+export const Item = ({imagem, titulo, itemDesc, estudio, itemName, preco, id}) => {
+  const navigation = useNavigation();
   return (
-    <View style={styles.containerItem}>
+    <TouchableOpacity style={styles.containerItem} onPress={() => navigation.push('DetalhesProduto', {
+      itemDesc,
+      imagem,
+      estudio,
+      titulo,
+      preco,
+      id,
+      itemName,
+    })}>
       <Image source={imagem} style={styles.imagem} resizeMode="contain" />
       <Text style={styles.texto}>{titulo}</Text>
-    </View>
+    </TouchableOpacity>
   );
 };
 
@@ -26,8 +40,8 @@ const styles = StyleSheet.create({
   },
   texto:{
     marginTop: 8,
-    fontFamily: 'OpenSans-SemiBold',
-    fontSize: 14,
+    fontFamily: FONT_FAMILY_SEMI_BOLD,
+    fontSize: FONT_SIZE_SMALL,
     fontWeight: 'bold',
     color: '#848486',
   },

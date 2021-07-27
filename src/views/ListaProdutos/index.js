@@ -1,9 +1,9 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
-import {FlatList, View, StyleSheet} from 'react-native';
+import {View, FlatList, StyleSheet} from 'react-native';
 import Cabecalho from './components/Cabecalho';
-import { DATA } from '../../utils/data';
-import { Item } from './components/Produto';
+import {DATA} from '../../utils/data';
+import {Item} from './components/Produto';
 
 const ListaProdutos = () => {
   return (
@@ -11,19 +11,18 @@ const ListaProdutos = () => {
       <FlatList
         numColumns={2}
         data={DATA}
-        renderItem={({item}) => <Item {... item} />}
+        renderItem={({item}) => <Item {...item} />}
         keyExtractor={item => item.id}
-        ListHeaderComponent={
-          <Cabecalho />
-        }
+        ListHeaderComponent={<Cabecalho />}
       />
     </View>
   );
 };
+
 const styles = StyleSheet.create({
-    container: {
-        marginHorizontal: 24,
-    },
+  container: {
+    marginHorizontal: 24,
+  },
 });
 
 export default ListaProdutos;

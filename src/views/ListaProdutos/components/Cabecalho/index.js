@@ -1,20 +1,17 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
-import {View, Text, StyleSheet, Image} from 'react-native';
+import {View, StyleSheet, Text, Image} from 'react-native';
+import { COR_DE_FUNDO, FONT_FAMILY_REGULAR } from '../../../../styles/styles';
+import { Sacola } from '../../../../components/sacola';
 
 const Cabecalho = () => {
   return (
     <>
       <View style={styles.containerTitulo}>
         <Text style={styles.titulo}>Lighteria</Text>
-        <View style={styles.containerSacola}>
-          <Image
-            source={require('../../../../assets/images/icone-sacola.png')}
-            style={styles.imagem}
-          />
-        </View>
+        <Sacola />
       </View>
-      <View style={styles.containerDescricao}>
+      <View>
         <View style={styles.separador} />
         <View style={styles.containerTexto}>
           <Text style={styles.textoDescricao}>Categorias</Text>
@@ -25,36 +22,21 @@ const Cabecalho = () => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#F4F0F4',
-  },
   containerTitulo: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: 24,
+    paddingVertical: 16,
+    paddingHorizontal: 6,
   },
   titulo: {
     fontFamily: 'OpenSans-Bold',
     fontSize: 28,
   },
-  containerSacola: {
-    backgroundColor: '#fff',
-    padding: 18,
-    borderRadius: 30,
-  },
-  imagem: {
-    height: 30,
-    width: 30,
-  },
   separador: {
     borderWidth: 0.5,
     borderColor: '#A1A5AA',
     margin: 10,
-  },
-  containerDescricao: {
-    //paddingHorizontal: 16,
   },
   containerTexto: {
     flexDirection: 'row',
@@ -63,9 +45,9 @@ const styles = StyleSheet.create({
   },
   textoDescricao: {
     padding: 24,
-    backgroundColor: '#F4F0F4',
+    backgroundColor: COR_DE_FUNDO,
     color: '#A1A5AA',
-    fontFamily: 'OpenSans-Regular',
+    fontFamily: FONT_FAMILY_REGULAR,
     fontSize: 16,
   },
 });
