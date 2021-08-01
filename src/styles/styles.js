@@ -3,6 +3,7 @@
 export const COR_DE_FUNDO = '#F4F0F4';
 export const BLACK = '#000000';
 export const WHITE = '#fff';
+export const RED = '#ff0000';
 export const LIGHTGRAY = '#CACACA';
 export const LIGHTERGRAY = '#ACAAAB';
 export const LIGHTBLUE = '#00adef';
